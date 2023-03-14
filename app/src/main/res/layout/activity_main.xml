@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
 
     <GridLayout
         android:id="@+id/gridLayout"
@@ -18,17 +20,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <ImageButton
             android:id="@+id/button1"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:scaleType="fitCenter"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:textSize="50sp"
-            android:text="" />
+            android:text=""
+            android:src="@drawable/defaultflask"/>
 
-        <Button
+
+        <ImageButton
             android:id="@+id/button2"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -36,9 +41,12 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:textSize="50sp"
-            android:text="" />
+            android:text=""
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultflask"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/button3"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -46,9 +54,12 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:textSize="50sp"
-            android:text="" />
+            android:text=""
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultflask"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/button4"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -56,9 +67,12 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:textSize="50sp"
-            android:text="" />
+            android:text=""
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultflask"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/button5"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -66,9 +80,12 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:textSize="50sp"
-            android:text="" />
+            android:text=""
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultflask"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/button6"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -76,9 +93,12 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:textSize="50sp"
-            android:text="" />
+            android:text=""
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultflask"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/button7"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -86,9 +106,12 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:textSize="50sp"
-            android:text="" />
+            android:text=""
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultflask"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/button8"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -96,9 +119,12 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:textSize="50sp"
-            android:text="" />
+            android:text=""
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultflask"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/button9"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -106,7 +132,10 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:textSize="50sp"
-            android:text="" />
+            android:text=""
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultflask"
+            />
 
     </GridLayout>
 

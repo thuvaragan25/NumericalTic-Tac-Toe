@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.widget.GridLayout;
@@ -74,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < 9; i++) {
             board[i/3][i%3] = -1;
             View view = gridLayout.getChildAt(i);
-            if(view instanceof Button) {
-                final Button button = (Button) view;
-                button.setText("");
+            if(view instanceof ImageButton) {
+                final ImageButton button = (ImageButton) view;
+                button.setImageResource(R.drawable.defaultflask);
                 button.setBackgroundColor(Color.parseColor("#808080"));
             }
         }
@@ -120,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        getSupportActionBar().hide();
         reset();
 
         // get all buttons from the grid layout
@@ -127,8 +130,9 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i = 0; i < gridLayout.getChildCount(); ++i) {
             View view = gridLayout.getChildAt(i);
-            if(view instanceof Button) {
-                final Button button = (Button) view;
+            if(view instanceof ImageButton) {
+                final ImageButton button = (ImageButton) view;
+                button.setImageResource(R.drawable.defaultflask);
                 button.setBackgroundColor(Color.parseColor("#808080"));
             }
         }
@@ -143,8 +147,8 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < gridLayout.getChildCount(); i++) {
             View view = gridLayout.getChildAt(i);
-            if (view instanceof Button) {
-                final Button button = (Button) view;
+            if (view instanceof ImageButton) {
+                final ImageButton button = (ImageButton) view;
                 final int row = i/3, col = i%3;
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -163,11 +167,12 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int choice) {
                                     // update button text based on player's choice
-                                    button.setText(""+(turn == PLAYERS.PLAYER_1 ? oddNums[choice] : evenNums[choice]));
+                                    int selected = (turn == PLAYERS.PLAYER_1 ? oddNums[choice] : evenNums[choice]);
+                                    button.setImageResource(R.drawable.flask1 + (selected-1));
                                     if(turn == PLAYERS.PLAYER_1) {
-                                        button.setBackgroundColor(Color.parseColor("#ff0000"));
+                                        button.setBackgroundColor(Color.parseColor("#8bc6fc"));
                                     } else {
-                                        button.setBackgroundColor(Color.parseColor("#0000ff"));
+                                        button.setBackgroundColor(Color.parseColor("#ffde59"));
                                     }
                                     // update board array
                                     board[row][col] = (turn == PLAYERS.PLAYER_1 ? oddNums[choice] : evenNums[choice]);
@@ -176,14 +181,14 @@ public class MainActivity extends AppCompatActivity {
                                     if(winner == GAME_STATE.WIN) {
                                         AlertDialog.Builder builder2 = new AlertDialog.Builder(MainActivity.this);
                                         if(turn == PLAYERS.PLAYER_1) {
-                                            builder2.setTitle("Red won!");
-                                            builder2.setMessage("Red won the game.");
+                                            builder2.setTitle("Player 1 won!");
+                                            builder2.setMessage("Player 1 won the game.");
                                             AlertDialog dialog2 = builder2.create();
                                             dialog2.show();
                                         }
                                         else {
-                                            builder2.setTitle("Blue won!");
-                                            builder2.setMessage("Blue won the game.");
+                                            builder2.setTitle("Player 2 won!");
+                                            builder2.setMessage("Player 2 won the game.");
                                             AlertDialog dialog2 = builder2.create();
                                             dialog2.show();
                                         }
