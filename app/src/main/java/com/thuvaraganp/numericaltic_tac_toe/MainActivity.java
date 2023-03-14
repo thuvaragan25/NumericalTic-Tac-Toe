@@ -121,6 +121,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button back = (Button) findViewById(R.id.button11);
+
+        back.setOnClickListener(v -> {
+            this.finish();
+        });
+
 
         getSupportActionBar().hide();
         reset();
@@ -162,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             // show a dialog to choose numbers
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                            builder.setTitle("Choose symbol");
+                            builder.setTitle("Choose Ingredient");
                             builder.setItems(intListToCharList(turn == PLAYERS.PLAYER_1 ? oddNums : evenNums), new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int choice) {
