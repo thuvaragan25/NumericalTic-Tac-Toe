@@ -15,13 +15,6 @@ public class SplashScreen extends AppCompatActivity {
         getSupportActionBar().hide();
         Handler handler = new Handler();
 
-//        final Runnable r = new Runnable() {
-//            public void run() {
-//                handler.postDelayed(this, 1000);
-//                Intent i = new Intent(SplashScreen.this, MainMenu.class);
-//                startActivity(i);
-//            }
-//        };
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){
